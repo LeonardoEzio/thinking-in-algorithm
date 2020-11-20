@@ -64,7 +64,9 @@ public class Solution1493 {
             }
             result = Math.max(result, r1);
         }
-        if (result == arr.length) result--;
+        if (result == arr.length) {
+            result--;
+        }
         return result;
     }
 

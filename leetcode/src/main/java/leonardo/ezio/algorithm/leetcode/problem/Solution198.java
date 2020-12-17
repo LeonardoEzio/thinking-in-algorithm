@@ -37,60 +37,29 @@ public class Solution198 {
      * 贪心算法实现，不能实现全局最优解
      * */
     public static int solution(int [] nums){
-        List<Integer> sort = new ArrayList<>();
-        List<Integer> index = new ArrayList<>();
-        List<Integer> alreadyRob = new ArrayList<>();
-        List<Integer> alreadyRob2 = new ArrayList<>();
-        for (int i = 0 ; i<nums.length;i++){
-            if (index.contains(i)){
-                continue;
-            }
-            int max = nums[i];
-            int maxIndex = i;
-            for (int j =0;j<nums.length;j++){
-                if (nums[j]> max && !index.contains(j)){
-                    max = nums[j];
-                    maxIndex = j;
-                }
-            }
-            sort.add(max);
-            index.add(maxIndex);
-            if (maxIndex != i){
-                i--;
-            }
+        int n = nums.length;
+        if (n <= 0){
+            return 0;
         }
-
-        sort.forEach(i->{
-            System.out.print(i);
-        });
-        System.out.println();
-        index.forEach(i->{
-            System.out.print(i);
-        });
-        System.out.println();
-        int result = 0;
-        for (int i = 0; i<sort.size();i++){
-            if (!alreadyRob.contains(index.get(i)+1) && !alreadyRob.contains(index.get(i)-1)){
-                result += sort.get(i);
-                alreadyRob.add(index.get(i));
-            }
+        //存储偷或不偷得到的收益
+        int[][] robs = new int[n][2];
+        //初始化偷第一家所能偷到的金额
+        robs[0][0] = nums[0];
+        //初始化不偷第一家的金额
+        robs[0][1] = 0;
+        for (int i = 1; i<n ; i++){
+            //状态转移
+            //偷这家 由不偷上一家转移而来
+            robs[i][0] = robs[i - 1][1] + nums[i];
+            //不偷这家 可由 不偷上一家 以及偷上一家转移而来 取其最大值
+            robs[i][1] = Math.max(robs[i - 1][1], robs[i - 1][0]);
         }
-
-
-        int result1 = 0;
-        for (int i= sort.size()-1 ; i>=0 ; i--){
-            if (!alreadyRob2.contains(index.get(i)+1) && !alreadyRob2.contains(index.get(i)-1)){
-                result1 += sort.get(i);
-                alreadyRob2.add(index.get(i));
-            }
-        }
-
-        return Math.max(result, result1);
+        return Math.max(robs[n-1][0],robs[n-1][1]);
     }
 
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,7,9,4};
+        int[] arr = new int[]{2,7,9,3,1};
         int solution = solution(arr);
         System.out.println(solution);
     }

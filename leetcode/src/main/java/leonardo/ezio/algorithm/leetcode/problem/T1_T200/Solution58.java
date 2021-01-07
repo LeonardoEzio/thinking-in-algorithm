@@ -1,4 +1,4 @@
-package leonardo.ezio.algorithm.leetcode.problem;
+package leonardo.ezio.algorithm.leetcode.problem.T1_T200;
 
 /**
  * @ClassName : Solution58

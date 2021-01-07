@@ -1,4 +1,4 @@
-package leonardo.ezio.algorithm.leetcode.problem;
+package leonardo.ezio.algorithm.leetcode.problem.T400_T600;
 
 import java.util.HashMap;
 import java.util.Map;

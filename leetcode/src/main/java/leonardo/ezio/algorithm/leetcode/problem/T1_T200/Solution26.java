@@ -1,10 +1,10 @@
-package leonardo.ezio.algorithm.leetcode.problem;
+package leonardo.ezio.algorithm.leetcode.problem.T1_T200;
 
 /**
- * @ClassName : Solution66
+ * @ClassName : Solution26
  * @Author : LeonardoEzio
- * @Date : 2020-11-20 22:38
- * @Description : Leet code 66题 题解
+ * @Date : 2020-11-20 22:41
+ * @Description : Leet code 26题 题解
  *
  * 66. 加一
  * 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。
@@ -36,29 +36,30 @@ package leonardo.ezio.algorithm.leetcode.problem;
  * 1 <= digits.length <= 100
  * 0 <= digits[i] <= 9
  *
- *
  */
-public class Solution66 {
+public class Solution26 {
 
-    public static int[] plusOne(int[] digits) {
-        int digitsLen = digits.length;
-        for (int i = digitsLen-1;i>=0;i--){
-            digits[i]++;
-            digits[i] %= 10;
-            if (digits[i] != 0){
-                return digits;
+    public static int removeDuplicates(int[] nums) {
+        int len = nums.length;
+        for (int i = 0 ; i<len-1; i++){
+            if (nums[i] == nums[i+1]){
+                for (int j = i ; j<len-1 ; j++){
+                    nums[j] = nums[j+1];
+                }
+                i--;
+                len--;
             }
         }
-        digits = new int[digitsLen+1];
-        digits[0] = 1;
-        return digits;
+        return len;
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 2, 3};
-        int[] ints = plusOne(nums);
-        for (int anInt : ints) {
-            System.out.print(anInt+",");
+        int[] nums = new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int size = removeDuplicates(nums);
+        System.out.println(size);
+        System.out.println("=========================");
+        for(int i = 0 ; i<size ;i++){
+            System.out.println(nums[i]);
         }
     }
 }

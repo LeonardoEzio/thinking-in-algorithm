@@ -1,4 +1,4 @@
-package leonardo.ezio.algorithm.leetcode.problem.T400_T600;
+package leonardo.ezio.algorithm.leetcode.problem.T600_T800;
 
 import java.util.PriorityQueue;
 

@@ -12,6 +12,8 @@
     <groupId>leonardo.ezio</groupId>
     <artifactId>algorithm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <name>algorithm</name>
     <description>algorithm practice project</description>
 

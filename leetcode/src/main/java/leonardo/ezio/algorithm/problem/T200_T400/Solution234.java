@@ -56,6 +56,7 @@ public class Solution234 {
                 slow = slow.next;
                 break;
             }
+            
         }
 
         //开始对比链表是否是回文链表

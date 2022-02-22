@@ -40,7 +40,7 @@ public class Solution234 {
         while (true){
             //暂存slow下一个节点，最终让slow往下走
             ListNode node = slow.next;
-            slow.next = null;
+            slow.next = reverse;
             reverse = slow;
             slow = node;
 
@@ -56,7 +56,7 @@ public class Solution234 {
                 slow = slow.next;
                 break;
             }
-            
+
         }
 
         //开始对比链表是否是回文链表

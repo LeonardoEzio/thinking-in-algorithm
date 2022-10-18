@@ -1,6 +1,5 @@
 package leonardo.ezio.datastructure;
 
-import org.omg.PortableInterceptor.INACTIVE;
 
 /**
  * @ClassName : MyLinkedList

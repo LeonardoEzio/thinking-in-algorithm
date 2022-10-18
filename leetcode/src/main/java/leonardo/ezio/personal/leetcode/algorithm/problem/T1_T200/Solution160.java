@@ -1,6 +1,6 @@
 package leonardo.ezio.personal.leetcode.algorithm.problem.T1_T200;
 
-import leonardo.ezio.personal.leetcode.datastructure.ListNode;
+import leonardo.ezio.personal.leetcode.datastructure.linklist.ListNode;
 
 /**
  * @ClassName : Solution160

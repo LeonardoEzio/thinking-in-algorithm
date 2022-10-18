@@ -1,4 +1,4 @@
-package leonardo.ezio.personal.leetcode.datastructure;
+package leonardo.ezio.personal.leetcode.datastructure.linklist;
 
 /**
  * @ClassName : ListNode
